@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTableModule } from '@angular/material/table';
-import { MatButtonModule } from '@angular/material/button';
-import { MatListModule } from '@angular/material/list';
-import { MatIconModule } from '@angular/material/icon';
-import { Order } from '../../../models/order.model';
-import { OrderService } from '../../../services/order.service';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
+import { MatListModule } from "@angular/material/list";
+import { MatIconModule } from "@angular/material/icon";
+import { Order } from "../../../models/order.model";
+import { OrderService } from "../../../services/order.service";
 
 @Component({
-  selector: 'app-order-list',
+  selector: "app-order-list",
   standalone: true,
   imports: [
     CommonModule,
@@ -19,15 +19,22 @@ import { OrderService } from '../../../services/order.service';
     MatTableModule,
     MatButtonModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
   ],
-  templateUrl: './order-list.component.html',
-  styleUrls: ['./order-list.component.css']
+  templateUrl: "./order-list.component.html",
+  styleUrls: ["./order-list.component.css"],
 })
 export class OrderListComponent {
-  displayedColumns: string[] = ['id', 'createdAt', 'amount', 'price', 'products', 'state'];
+  displayedColumns: string[] = [
+    "id",
+    "createdAt",
+    "amount",
+    "price",
+    "products",
+    "state",
+  ];
 
-  // mockup orders
+  // mockup orders for testing
   // orders = [
   //   { id: 1, item: 'Product 1', status: 'Delivered' },
   //   { id: 2, item: 'Product 2', status: 'Pending' },
@@ -41,9 +48,8 @@ export class OrderListComponent {
   ngOnInit(): void {
     const customerId = 1; // this is hard coded - but it needs to be replaced with real customerId logic
     this.orders = this.orderService.getOrdersByCustomer(customerId);
-    console.log('Orders fetched:', this.orders);
+    console.log("Orders fetched:", this.orders);
   }
 
   dataSource = this.orders;
-
 }

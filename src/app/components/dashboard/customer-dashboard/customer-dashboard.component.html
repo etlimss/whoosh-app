@@ -1,36 +1,33 @@
 <div class="dashboard-content">
-    <h2>Welcome, {{user.name}}!</h2>
-
-    <div class="order-summary">
-        <h3>Order Summary</h3>
-        <div class="summary-cards">
-          <mat-card class="summary-card">
-            <mat-card-title>Total Orders</mat-card-title>
-            <mat-card-content>{{orderSummary.totalOrders}}</mat-card-content>
-          </mat-card>
-          <mat-card class="summary-card">
-            <mat-card-title>Pending Orders</mat-card-title>
-            <mat-card-content>{{orderSummary.pendingOrders}}</mat-card-content>
-          </mat-card>
-          <mat-card class="summary-card">
-            <mat-card-title>Delivered Orders</mat-card-title>
-            <mat-card-content>{{orderSummary.deliveredOrders}}</mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-    
-      <div class="recent-orders">
-        <h3>Recent Orders</h3>
-        <mat-list>
-          <mat-list-item *ngFor="let order of recentOrders">
-            <h4 matLine>{{order.item}}</h4>
-            <p matLine>Status: {{order.status}}</p>
-          </mat-list-item>
-        </mat-list>
-      </div>
-    
-      <div class="quick-links">
-        <button mat-raised-button color="primary" routerLink="/orders">View All Orders</button>
-        <button mat-raised-button color="accent" routerLink="/profile">Edit Profile</button>
-      </div>
+  <h2>Welcome, {{user.name}}!</h2>
+  <div class="order-summary">
+    <h3>Order Summary</h3>
+    <div class="summary-cards">
+      <mat-card class="summary-card">
+        <mat-card-title>Total Orders</mat-card-title>
+        <mat-card-content>{{orderSummary.totalOrders}}</mat-card-content>
+      </mat-card>
+      <mat-card class="summary-card">
+        <mat-card-title>Pending Orders</mat-card-title>
+        <mat-card-content>{{orderSummary.pendingOrders}}</mat-card-content>
+      </mat-card>
+      <mat-card class="summary-card">
+        <mat-card-title>Delivered Orders</mat-card-title>
+        <mat-card-content>{{orderSummary.deliveredOrders}}</mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div class="recent-orders">
+    <h3>Recent Orders</h3>
+    <mat-list>
+      <mat-list-item *ngFor="let order of recentOrders">
+        <h4 matLine>{{order.item}}</h4>
+        <p matLine>Status: {{order.status}}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div class="quick-links">
+    <button mat-raised-button color="primary" routerLink="/orders">View All Orders</button>
+    <button mat-raised-button color="accent" routerLink="/profile">Edit Profile</button>
+  </div>
 </div>

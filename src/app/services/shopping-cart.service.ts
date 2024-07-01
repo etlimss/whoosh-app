@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { Product } from '../models/product.model';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Product } from "../models/product.model";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ShoppingCartService {
   private cartItems: Product[] = [];
@@ -19,7 +19,9 @@ export class ShoppingCartService {
   }
 
   addToCart(product: Product, quantity: number): void {
-    const existingProduct = this.cartItems.find(item => item.id === product.id);
+    const existingProduct = this.cartItems.find(
+      (item) => item.id === product.id
+    );
     if (existingProduct) {
       existingProduct.quantity += quantity;
     } else {
@@ -29,7 +31,7 @@ export class ShoppingCartService {
   }
 
   removeFromCart(productId: number): void {
-    this.cartItems = this.cartItems.filter(item => item.id !== productId);
+    this.cartItems = this.cartItems.filter((item) => item.id !== productId);
     this.saveCart();
   }
 
@@ -39,19 +41,21 @@ export class ShoppingCartService {
   }
 
   private saveCart(): void {
-    localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
+    localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
     this.updateCartItemCount();
   }
 
   private loadCart(): void {
-    const cart = localStorage.getItem('cartItems');
+    const cart = localStorage.getItem("cartItems");
     this.cartItems = cart ? JSON.parse(cart) : [];
     this.updateCartItemCount();
   }
 
   private updateCartItemCount(): void {
-    const itemCount = this.cartItems.reduce((count, item) => count + item.quantity, 0);
+    const itemCount = this.cartItems.reduce(
+      (count, item) => count + item.quantity,
+      0
+    );
     this.cartItemCountSubject.next(itemCount);
   }
- 
 }

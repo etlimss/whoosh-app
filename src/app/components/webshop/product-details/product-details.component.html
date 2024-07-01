@@ -3,17 +3,17 @@
   <mat-card>
     <img mat-card-image [src]="product.imageUrl" alt="{{product.name}}" class="product-img">
     <div class="product-cntr">
-        <mat-card-title>{{ product.name }}</mat-card-title>
-        <mat-card-content class="product-des">{{ product.description }}</mat-card-content>
-        <p class="product-price">Price: {{ product.price }} DKK</p>
-        <mat-form-field appearance="fill">
-            <mat-label>Quantity</mat-label>
-            <input matInput type="number" [(ngModel)]="quantity" min="1">
-        </mat-form-field>
-        <button mat-button color="primary" (click)="addToCart()">Add to Cart</button>
-        <mat-card-actions>
-          <button mat-button color="primary" [routerLink]="'/'">Back to Products</button>
-        </mat-card-actions>
+      <mat-card-title>{{ product.name }}</mat-card-title>
+      <mat-card-content class="product-des">{{ product.description }}</mat-card-content>
+      <p class="product-price">Price: {{ product.price }} DKK</p>
+      <mat-form-field appearance="fill">
+        <mat-label>Quantity</mat-label>
+        <input matInput type="number" [(ngModel)]="quantity" min="1">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="addToCart()">Add to Cart</button>
+      <mat-card-actions>
+        <button mat-button color="primary" [routerLink]="'/'">Back to Products</button>
+      </mat-card-actions>
     </div>
   </mat-card>
 </div>
