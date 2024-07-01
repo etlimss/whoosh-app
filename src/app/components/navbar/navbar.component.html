@@ -1,0 +1,17 @@
+<mat-toolbar>
+    <span class="logo-nav" routerLink="/">Whoosh!</span>
+    <span class="spacer"></span>
+    <a *ngIf="authService.isAuthenticated()" mat-button routerLink="/orders">Orders</a>
+    <a *ngIf="authService.isAuthenticated()" mat-button routerLink="/profile">Profile</a>
+    <div class="cart-btn-cntr" *ngIf="authService.isAuthenticated()">
+      <button mat-icon-button routerLink="/cart">
+        <mat-icon>shopping_cart</mat-icon>
+        <span *ngIf="cartItemCount > 0" class="cart-count">{{ cartItemCount }}</span>
+      </button>
+    </div>
+    <button *ngIf="authService.isAuthenticated()" mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+    <button *ngIf="!authService.isAuthenticated()" mat-button routerLink="/login">Login</button>
+</mat-toolbar>
+  

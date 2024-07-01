@@ -1,0 +1,29 @@
+.product-details {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.product-img {
+    width: 100%;
+    height: auto;
+    max-height: 35rem;
+    object-fit: cover;
+}
+
+.product-price {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.product-price {
+    text-align: right;
+}
+
+.product-cntr {
+    padding: 1rem
+}
+
+.product-des {
+    width: 100%;
+}

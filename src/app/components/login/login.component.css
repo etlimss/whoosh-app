@@ -1,0 +1,38 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4rem;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title {
+    padding: 0.7rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit-cntr {
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+  
+mat-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #EEEDEB;
+}
+  
+mat-card-title {
+    text-align: center;
+}

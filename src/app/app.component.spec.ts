@@ -1,10 +1,20 @@
 import { TestBed } from '@angular/core/testing';
+import { RouterModule } from '@angular/router';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
+      imports: [
+        AppComponent,
+        RouterModule.forRoot([]),  // Empty routes array for testing purposes
+        MatToolbarModule,
+        MatDividerModule,
+        MatButtonModule
+      ],
     }).compileComponents();
   });
 

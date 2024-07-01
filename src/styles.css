@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --main-grey: #EEEDEB;
+    --main-blue: #2F3645;
+    --main-colar: #E6B9A6;
+    --main-dark-grey: #939185;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

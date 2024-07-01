@@ -1,0 +1,34 @@
+mat-toolbar {
+    margin-bottom: 20px;
+}
+
+.orders-container {
+    padding: 2.5rem;
+}
+  
+.order-details-container {
+    padding: 20px;
+}
+  
+.order-details-container h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+  
+.order-details-container p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+  
+mat-table {
+    width: 100%;
+}
+  
+mat-header-cell, mat-cell {
+    padding: 8px;
+}
+  
+button {
+    margin-bottom: 20px;
+}
+  

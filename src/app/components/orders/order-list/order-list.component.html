@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">My Orders</mat-toolbar>
+<table mat-table [dataSource]="orders" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="createdAt">
+    <mat-header-cell *matHeaderCellDef> Created At </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.createdAt | date}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.amount}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.price | currency: 'DKK'}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="products">
+    <mat-header-cell *matHeaderCellDef> Products </mat-header-cell>
+    <mat-cell *matCellDef="let order">
+      <ul>
+        <li *ngFor="let product of order.products">
+          {{ product.name }} - {{ product.price | currency: 'DKK' }}
+        </li>
+      </ul>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+    <mat-cell *matCellDef="let order"> {{order.state}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</table>
